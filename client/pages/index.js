@@ -3,7 +3,7 @@ import { ApolloClient,  ApolloProvider,InMemoryCache, HttpLink, from } from "@ap
 import Name from '../components/Name';
 
 const httpLink = new HttpLink({
-  uri: "http://localhost:5002/graphql"
+  uri: "https://next-apollo-demo-app.herokuapp.com/graphql"
 });
 
 
