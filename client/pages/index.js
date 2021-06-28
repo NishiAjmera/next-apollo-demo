@@ -1,14 +1,40 @@
-import Link from 'next/link'
-import WithApollo from '../lib/with-apollo'
-import Name from '../components/Name'
+import Link from 'next/link';
+import { ApolloClient,  ApolloProvider,InMemoryCache, HttpLink, from } from "@apollo/client";
+import Name from '../components/Name';
+
+const httpLink = new HttpLink({
+  uri: "http://localhost:5002/graphql"
+});
+
+
+
+const client = new ApolloClient({
+  // The `from` function combines an array of individual links
+  // into a link chain
+  link: from([httpLink]),
+  cache: new InMemoryCache(  {
+    typePolicies: {
+    Query: {
+      fields: {
+        users: {
+          // The keyArgs list and merge function are the same as above.
+          keyArgs: [],
+          merge(existing = [], incoming) {
+            return [...incoming];
+          },
+        }
+      }
+    }
+  }
+})
+});
 
 const Page = () => (
-  <div>
+  <ApolloProvider client={client}>
     Welcome, <Name />
     <br/><br/>
     <Link href="/about"><a>About</a></Link>
-
-  </div>
+    </ApolloProvider>
 )
 
-export default WithApollo(Page)
+export default Page;
