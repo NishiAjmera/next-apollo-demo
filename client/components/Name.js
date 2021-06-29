@@ -36,7 +36,7 @@ const Name = () => {
   return (
     <div>
     <div className={styles.Cards}>
-    {data.users.map(user => <Card><li>{user.name}</li><li>{user.address}</li>
+    {data.users.map((user, index) => <Card key={index}><li>{user.name}</li><li>{user.address}</li>
                                   </Card>)}
     </div>
     <br></br>
