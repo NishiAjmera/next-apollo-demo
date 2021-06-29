@@ -1,6 +1,4 @@
 import express from 'express';
-import bodyParser from 'body-parser';
-import cors from 'cors';
 import { ApolloServer } from 'apollo-server-express';
 import { typeDefs, resolvers } from './schema.js';
   
@@ -26,7 +24,7 @@ import { typeDefs, resolvers } from './schema.js';
   // // for the graphiql interface
   // app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
   
-  const port = process.env.PORT || 5002
+  const port = process.env.PORT || 5000
   app.listen(port, (err) => {
     if (err) throw err
     console.log(`Graphql Server started on: http://localhost:${port}`)

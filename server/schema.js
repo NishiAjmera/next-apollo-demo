@@ -17,16 +17,6 @@ for (var i = 0; i < 2000; ++i) {
 }
 
 
-// const users = [
-//   casual.user,
-//   {
-//     name: 'Kate Chopin',
-//     address: 'US',
-//     email: 'kate.chopin@gmail.com',
-//     phoneNumber: '23423489878'
-//   },
-// ];
-
 export const typeDefs =  gql`
 type Query {
   users(offset: Int, limit: Int): [User]

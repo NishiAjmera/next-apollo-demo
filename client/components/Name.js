@@ -2,7 +2,7 @@ import {gql, useQuery, InMemoryCache} from '@apollo/client'
 import Card from './Card';
 import styles from './Name.module.css';
 import {useState} from 'react';
-
+import React from 'react';
 
 const Name = () => {
   const [first, setFirst] = useState(20);
