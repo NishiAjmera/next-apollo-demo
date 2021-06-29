@@ -33,13 +33,13 @@ const Name = () => {
     return <p>error</p>
   }
 
-  // return data.users.map(user => <li>{user.name}</li>);
-
   return (
     <div>
     <div className={styles.Cards}>
-    {data.users.map(user => <Card>{user.name}</Card>)}
+    {data.users.map(user => <Card><li>{user.name}</li><li>{user.address}</li>
+                                  </Card>)}
     </div>
+    <br></br>
     <button  onClick={loadMoreHandler}>Load More</button>
     </div>
     )
@@ -51,7 +51,7 @@ const USER_QUERY = gql`
   query Users($offset: Int, $limit: Int) {
     users(offset: $offset, limit: $limit) {
     name
-    phoneNumber
+    address
   }}`
 
 export default Name;

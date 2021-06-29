@@ -16,13 +16,6 @@ import { typeDefs, resolvers } from './schema.js';
     res.send('Hello!');
     res.end();
   })
-
-  // to access graphql API from the client side
-  // app.use(cors())
-  // bodyParser is needed just for POST.
-  // app.use('/graphql', bodyParser.json(), graphqlExpress({ schema: myGraphQLSchema }));
-  // // for the graphiql interface
-  // app.get('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }));
   
   const port = process.env.PORT || 5000
   app.listen(port, (err) => {
