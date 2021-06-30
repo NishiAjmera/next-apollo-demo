@@ -1,12 +1,14 @@
 {
   "name": "next-apollo-demo",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "test": "jest"
+    "test": "jest",
+    "codegen": "graphql-codegen --config codegen.yml",
+    "lint": "next lint"
   },
   "license": "MIT",
   "dependencies": {
@@ -18,7 +20,8 @@
     "react": "^17.0.2",
     "react-apollo": "^3.1.5",
     "react-dom": "^17.0.2",
-    "typescript": "4.3.4"
+    "typescript": "4.3.4",
+    "@types/react": "17.0.11"
   },
   "devDependencies": {
     "fetch": "^1.1.0",
@@ -30,7 +33,6 @@
     "@graphql-codegen/typescript-operations": "^1.18.2",
     "@graphql-codegen/typescript-react-apollo": "^2.2.7",
     "@types/graphql": "^14.5.0",
-    "@types/react": "17.0.11",
     "apollo": "^2.33.4",
     "eslint": "7.29.0",
     "eslint-config-next": "11.0.1",

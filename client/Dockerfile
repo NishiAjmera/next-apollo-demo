@@ -10,8 +10,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install app dependencies
 COPY package.json ./
 COPY package-lock.json ./
-RUN npm install 
-RUN npm install --save-dev typescript @types/react
+RUN npm ci 
+RUN npm install typescript @types/react -g 
 
 
 # add app

@@ -16,7 +16,7 @@ export const Name: React.FC = () => {
   const [first, setFirst] = useState(20);
 
 
-   const { data, loading, error, fetchMore } = useUsersQuery({
+   const { data, loading, error, fetchMore }: {data: any, loading:any, error?:any, fetchMore:any} = useUsersQuery({
        variables: {
           offset: 20, 
           limit: 20
